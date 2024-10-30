@@ -18,7 +18,7 @@ function App() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/BFS" className="nav-link">
+              <Link to="/" className="nav-link">
                 Depth-First Search
               </Link>
             </li>
@@ -28,7 +28,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/DFS" element={<DfsContent />}></Route>
-          <Route path="/BFS" element={<BfsContent />}></Route>
+          <Route path="/" element={<BfsContent />}></Route>
         </Routes>
       </main>
     </Router>
