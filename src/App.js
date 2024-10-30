@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+import DfsContent from "./algorithms/dfs/DfsContent";
+import BfsContent from "./algorithms/bfs/BfsContent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <nav className="navbar fixed-top bg-light">
+        <div className="container-fluid justify-content-center">
+          <ul className="nav">
+            <li className="nav-item">
+              <Link to="/DFS" className="nav-link">
+                Depth-First Search
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/BFS" className="nav-link">
+                Depth-First Search
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main>
+        <Routes>
+          <Route path="/DFS" element={<DfsContent />}></Route>
+          <Route path="/BFS" element={<BfsContent />}></Route>
+        </Routes>
+      </main>
+    </Router>
   );
 }
 
